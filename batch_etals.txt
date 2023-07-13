@@ -1,0 +1,20 @@
+% usefile ./batch_etals.txt
+ 
+delimiter = ;
+ 
+dataset d;
+d.infile using ./data_etals.raw;
+map g;
+g.infile using ./westerngermany.bnd;
+mcmcreg m;
+m.outfile =  ./Results_etals/r ;
+logopen, replace using ./Results_etals/log.txt ;
+m.hregress y = Xls1 + Xls3 + Xls2(pspline) + tend + regions(spatial, map = g) + id(random) + tend*id(random), family=gaussian_shared equationtype=mu_shared iterations=70000 burnin=10000 step=60 IWLSlineff using d;
+m.hregress y = const + Xl1 + Xl2(pspline) weight wy, family=gaussian equationtype=mu using d;
+m.hregress ped_status = const + tend(pspline) + off(offset) + Xs1 + Xs2(pspline) weight wh,
+family=poisson equationtype=lambda setseed = 321 using d;
+m.getsample; 
+
+drop d m;
+ 
+delimiter = return;
