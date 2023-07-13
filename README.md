@@ -6,5 +6,7 @@ It is exemplary for simulating three sets of data - with the spatial effect in t
 ## Steps
 1. Install BayesX from https://www.uni-goettingen.de/de/download/550527.html
 2. Set path of BayesX installation in "Run_BayesX.R"
-3. Execute code in "Run_BayesX.R"
-4. Execute code in "Run_bamlss.R"
+3. Execute code in "Run_me.R"
+   OR
+4. Individually execute code in "Run_BayesX.R"
+5. Individually execute code in "Run_bamlss.R"
