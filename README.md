@@ -10,5 +10,5 @@ It is exemplary for simulating three sets of data - with the spatial effect in t
    
    OR
    
-3.1 Individually execute code in "Run_BayesX.R"
+3.1 Individually execute code in "Run_BayesX.R"  
 3.2 Individually execute code in "Run_bamlss.R"
